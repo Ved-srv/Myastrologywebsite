@@ -269,7 +269,7 @@ export default function ServicesPage() {
             situation and spiritual goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking?service=free">
+            <Link href="/services">
               <Button size="lg" className="glow hover:scale-105 transition-all">
                 <Sparkles className="mr-2 h-5 w-5" />
                 Schedule Consultation
