@@ -1,27 +1,248 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Added fallback hex colors for better localhost compatibility */
+  /* Updated color tokens for dark esoteric astrology theme */
+  --background: #1a0d2e; /* fallback */
+  --background: oklch(0.12 0.02 270); /* Deep cosmic purple-black */
+  --foreground: #f5f3ff; /* fallback */
+  --foreground: oklch(0.95 0.01 60); /* Warm starlight white */
+  --card: #2a1a4a; /* fallback */
+  --card: oklch(0.18 0.03 280); /* Darker mystical purple */
+  --card-foreground: #ede9fe; /* fallback */
+  --card-foreground: oklch(0.92 0.02 50); /* Soft golden white */
+  --popover: #1f1235; /* fallback */
+  --popover: oklch(0.15 0.02 270);
+  --popover-foreground: #f5f3ff; /* fallback */
+  --popover-foreground: oklch(0.95 0.01 60);
+  --primary: #7c3aed; /* fallback */
+  --primary: oklch(0.55 0.15 280); /* Mystical purple for CTAs */
+  --primary-foreground: #faf9ff; /* fallback */
+  --primary-foreground: oklch(0.98 0.01 60);
+  --secondary: #3d2a5c; /* fallback */
+  --secondary: oklch(0.25 0.04 290); /* Deep purple secondary */
+  --secondary-foreground: #e4d4f4; /* fallback */
+  --secondary-foreground: oklch(0.9 0.02 50);
+  --muted: #2d1b4e; /* fallback */
+  --muted: oklch(0.2 0.03 275);
+  --muted-foreground: #a78bfa; /* fallback */
+  --muted-foreground: oklch(0.65 0.05 60); /* Muted golden text */
+  --accent: #f59e0b; /* fallback */
+  --accent: oklch(0.7 0.12 45); /* Golden accent for highlights */
+  --accent-foreground: #1a0d2e; /* fallback */
+  --accent-foreground: oklch(0.15 0.02 270);
+  --destructive: #dc2626; /* fallback */
+  --destructive: oklch(0.55 0.2 15); /* Deep red */
+  --destructive-foreground: #f5f3ff; /* fallback */
+  --destructive-foreground: oklch(0.95 0.01 60);
+  --border: #4c1d95; /* fallback */
+  --border: oklch(0.3 0.05 285); /* Subtle purple borders */
+  --input: #312e81; /* fallback */
+  --input: oklch(0.22 0.03 280);
+  --ring: #8b5cf6; /* fallback */
+  --ring: oklch(0.6 0.15 280); /* Purple focus rings */
+  --chart-1: #7c3aed; /* fallback */
+  --chart-1: oklch(0.55 0.15 280);
+  --chart-2: #f59e0b; /* fallback */
+  --chart-2: oklch(0.7 0.12 45);
+  --chart-3: #a855f7; /* fallback */
+  --chart-3: oklch(0.6 0.18 320);
+  --chart-4: #06b6d4; /* fallback */
+  --chart-4: oklch(0.65 0.15 200);
+  --chart-5: #eab308; /* fallback */
+  --chart-5: oklch(0.75 0.1 80);
+  --radius: 0.625rem;
+  --sidebar: #251447; /* fallback */
+  --sidebar: oklch(0.16 0.02 275);
+  --sidebar-foreground: #ede9fe; /* fallback */
+  --sidebar-foreground: oklch(0.92 0.02 50);
+  --sidebar-primary: #7c3aed; /* fallback */
+  --sidebar-primary: oklch(0.55 0.15 280);
+  --sidebar-primary-foreground: #faf9ff; /* fallback */
+  --sidebar-primary-foreground: oklch(0.98 0.01 60);
+  --sidebar-accent: #3d2a5c; /* fallback */
+  --sidebar-accent: oklch(0.25 0.04 290);
+  --sidebar-accent-foreground: #e4d4f4; /* fallback */
+  --sidebar-accent-foreground: oklch(0.9 0.02 50);
+  --sidebar-border: #4c1d95; /* fallback */
+  --sidebar-border: oklch(0.3 0.05 285);
+  --sidebar-ring: #8b5cf6; /* fallback */
+  --sidebar-ring: oklch(0.6 0.15 280);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  /* Added fallback hex colors for dark mode */
+  /* Enhanced dark mode for deeper mystical experience */
+  --background: #0f0a1a; /* fallback */
+  --background: oklch(0.08 0.02 270); /* Even deeper cosmic black */
+  --foreground: #faf9ff; /* fallback */
+  --foreground: oklch(0.98 0.01 60); /* Brighter starlight */
+  --card: #1a0d2e; /* fallback */
+  --card: oklch(0.12 0.03 280);
+  --card-foreground: #f5f3ff; /* fallback */
+  --card-foreground: oklch(0.95 0.02 50);
+  --popover: #140a24; /* fallback */
+  --popover: oklch(0.1 0.02 270);
+  --popover-foreground: #faf9ff; /* fallback */
+  --popover-foreground: oklch(0.98 0.01 60);
+  --primary: #8b5cf6; /* fallback */
+  --primary: oklch(0.6 0.18 280); /* Brighter mystical purple */
+  --primary-foreground: #faf9ff; /* fallback */
+  --primary-foreground: oklch(0.98 0.01 60);
+  --secondary: #2d1b4e; /* fallback */
+  --secondary: oklch(0.2 0.04 290);
+  --secondary-foreground: #f5f3ff; /* fallback */
+  --secondary-foreground: oklch(0.95 0.02 50);
+  --muted: #1f1235; /* fallback */
+  --muted: oklch(0.15 0.03 275);
+  --muted-foreground: #c4b5fd; /* fallback */
+  --muted-foreground: oklch(0.7 0.05 60);
+  --accent: #fbbf24; /* fallback */
+  --accent: oklch(0.75 0.15 45); /* Brighter golden accent */
+  --accent-foreground: #140a24; /* fallback */
+  --accent-foreground: oklch(0.1 0.02 270);
+  --destructive: #ef4444; /* fallback */
+  --destructive: oklch(0.6 0.22 15);
+  --destructive-foreground: #faf9ff; /* fallback */
+  --destructive-foreground: oklch(0.98 0.01 60);
+  --border: #3730a3; /* fallback */
+  --border: oklch(0.25 0.05 285);
+  --input: #2563eb; /* fallback */
+  --input: oklch(0.18 0.03 280);
+  --ring: #a855f7; /* fallback */
+  --ring: oklch(0.65 0.18 280);
+  --chart-1: #8b5cf6; /* fallback */
+  --chart-1: oklch(0.6 0.18 280);
+  --chart-2: #fbbf24; /* fallback */
+  --chart-2: oklch(0.75 0.15 45);
+  --chart-3: #a855f7; /* fallback */
+  --chart-3: oklch(0.65 0.2 320);
+  --chart-4: #06b6d4; /* fallback */
+  --chart-4: oklch(0.7 0.18 200);
+  --chart-5: #eab308; /* fallback */
+  --chart-5: oklch(0.8 0.12 80);
+  --sidebar: #1a0d2e; /* fallback */
+  --sidebar: oklch(0.12 0.02 275);
+  --sidebar-foreground: #f5f3ff; /* fallback */
+  --sidebar-foreground: oklch(0.95 0.02 50);
+  --sidebar-primary: #8b5cf6; /* fallback */
+  --sidebar-primary: oklch(0.6 0.18 280);
+  --sidebar-primary-foreground: #faf9ff; /* fallback */
+  --sidebar-primary-foreground: oklch(0.98 0.01 60);
+  --sidebar-accent: #2d1b4e; /* fallback */
+  --sidebar-accent: oklch(0.2 0.04 290);
+  --sidebar-accent-foreground: #f5f3ff; /* fallback */
+  --sidebar-accent-foreground: oklch(0.95 0.02 50);
+  --sidebar-border: #3730a3; /* fallback */
+  --sidebar-border: oklch(0.25 0.05 285);
+  --sidebar-ring: #a855f7; /* fallback */
+  --sidebar-ring: oklch(0.65 0.18 280);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Removed @layer base and moved styles to @theme inline for Tailwind v4 compatibility */
+* {
+  border-color: var(--color-border);
+  outline-color: color-mix(in srgb, var(--color-ring) 50%, transparent);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Added smooth scrolling behavior for navigation links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Added mystical animations and effects */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
   }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px oklch(0.6 0.15 280 / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px oklch(0.6 0.15 280 / 0.6), 0 0 30px oklch(0.6 0.15 280 / 0.4);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, oklch(0.7 0.12 45 / 0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.mystical-gradient {
+  background: linear-gradient(135deg, oklch(0.12 0.02 270), oklch(0.18 0.03 280), oklch(0.15 0.02 290));
 }
