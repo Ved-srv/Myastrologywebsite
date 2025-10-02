@@ -170,12 +170,15 @@ export default function ServicesPage() {
           </Badge>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
-            Sacred Services &<span className="text-accent block">Healing Offerings</span>
+            Sacred Services &
+            <span className="text-accent block">Healing Offerings</span>
           </h1>
 
           <p className="text-xl text-muted-foreground mb-8 text-pretty max-w-3xl mx-auto leading-relaxed">
-            Transform your life through authentic Vedic astrology and spiritual healing. Each consultation is personally
-            crafted to address your unique needs and spiritual journey with 15 years of dedicated practice and wisdom.
+            Transform your life through authentic Vedic astrology and spiritual
+            healing. Each consultation is personally crafted to address your
+            unique needs and spiritual journey with 15 years of dedicated
+            practice and wisdom.
           </p>
         </div>
       </section>
@@ -185,7 +188,7 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             {services.map((service) => {
-              const IconComponent = service.icon
+              const IconComponent = service.icon;
               return (
                 <Card
                   key={service.id}
@@ -202,7 +205,10 @@ export default function ServicesPage() {
 
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-xl">{service.title}</CardTitle>
-                      <Badge variant="outline" className="text-accent border-accent/50">
+                      <Badge
+                        variant="outline"
+                        className="text-accent border-accent/50"
+                      >
                         {service.price}
                       </Badge>
                     </div>
@@ -216,14 +222,21 @@ export default function ServicesPage() {
                       {service.duration}
                     </div>
 
-                    <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
                   </CardHeader>
 
                   <CardContent className="relative">
                     <div className="space-y-2 mb-6">
-                      <h4 className="font-semibold text-sm text-foreground/90 mb-3">What's Included:</h4>
+                      <h4 className="font-semibold text-sm text-foreground/90 mb-3">
+                        What's Included:
+                      </h4>
                       {service.features.map((feature, index) => (
-                        <div key={index} className="flex items-start text-sm text-muted-foreground">
+                        <div
+                          key={index}
+                          className="flex items-start text-sm text-muted-foreground"
+                        >
                           <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 mr-3 flex-shrink-0" />
                           <span>{feature}</span>
                         </div>
@@ -238,7 +251,7 @@ export default function ServicesPage() {
                     </Link>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
@@ -247,10 +260,13 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-card/30">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Begin Your Transformation?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Begin Your Transformation?
+          </h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto text-pretty">
-            Choose the service that resonates with your current needs, or contact me for a personalized recommendation
-            based on your unique situation and spiritual goals.
+            Choose the service that resonates with your current needs, or
+            contact me for a personalized recommendation based on your unique
+            situation and spiritual goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/booking?service=free">
@@ -259,7 +275,11 @@ export default function ServicesPage() {
                 Schedule Consultation
               </Button>
             </Link>
-            <Button variant="outline" size="lg" className="hover:bg-card hover:scale-105 transition-all bg-transparent">
+            <Button
+              variant="outline"
+              size="lg"
+              className="hover:bg-card hover:scale-105 transition-all bg-transparent"
+            >
               Ask Questions
             </Button>
           </div>
@@ -271,12 +291,16 @@ export default function ServicesPage() {
         <div className="container mx-auto max-w-4xl text-center">
           <div className="flex items-center justify-center space-x-2 mb-6">
             <Star className="h-6 w-6 text-accent" />
-            <span className="text-lg font-semibold">Shivangi</span>
+            <span className="text-lg font-semibold">Ved</span>
           </div>
-          <p className="text-muted-foreground mb-4">Vedic Astrology Practitioner & Spiritual Healer</p>
-          <p className="text-sm text-muted-foreground">© 2025 Shivangi. All rights reserved.</p>
+          <p className="text-muted-foreground mb-4">
+            Vedic Astrology Practitioner & Spiritual Healer
+          </p>
+          <p className="text-sm text-muted-foreground">
+            © 2025 Ved. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }

@@ -7,11 +7,11 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Shivangi - Vedic Astrology & Spiritual Healing",
+  title: "Ved - Vedic Astrology & Spiritual Healing",
   description:
     "Professional Vedic astrology consultations specializing in Parashari astrology, Jaimini sutram, and chakra healing through kriya yoga. 15 years of experience.",
   generator: "v0.app",
-}
+};
 
 export default function RootLayout({
   children,
