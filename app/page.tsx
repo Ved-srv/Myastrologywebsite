@@ -407,7 +407,7 @@ export default function Home() {
             personalized consultation and unlock the wisdom of ancient Vedic
             astrology.
           </p>
-          <Link href="/booking?service=free">
+          <Link href="/services">
             <Button size="lg" className="glow hover:scale-105 transition-all">
               <Sparkles className="mr-2 h-5 w-5" />
               Schedule Consultation
